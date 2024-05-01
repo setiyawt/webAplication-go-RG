@@ -3,10 +3,10 @@ package db
 import (
 	"fmt"
 
+	"a21hc3NpZ25tZW50/model"
+
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
-
-	"a21hc3NpZ25tZW50/model"
 )
 
 type Postgres struct{}

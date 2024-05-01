@@ -2,7 +2,7 @@ package model
 
 import "github.com/golang-jwt/jwt"
 
-var JwtKey = []byte("gtgergfrfewde433fd09jddkfsdsw")
+var JwtKey = []byte("session_token")
 
 type Claims struct {
 	UserID int `json:"user_id"`

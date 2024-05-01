@@ -8,10 +8,9 @@ import (
 	"a21hc3NpZ25tZW50/model"
 	repo "a21hc3NpZ25tZW50/repository"
 	"a21hc3NpZ25tZW50/service"
+	_ "embed"
 	"fmt"
 	"time"
-
-	_ "embed"
 
 	"github.com/gin-gonic/gin"
 	_ "github.com/lib/pq"

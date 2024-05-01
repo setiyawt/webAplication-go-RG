@@ -17,7 +17,7 @@ func Auth() gin.HandlerFunc {
 	return gin.HandlerFunc(func(ctx *gin.Context) {
 		// Mengecek apakah terdapat cookie session_token dalam request
 		cookie, err := ctx.Request.Cookie("session_token")
-		if err != nil || cookie.Value == "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE3MTQ0ODM0MTB9.9zau65zvdlMdlvNYa8fVI-SKWnwFFNU-JCXLEB0zNMo" {
+		if err != nil || cookie.Value == "" {
 			// Jika tidak ada cookie session_token, kirim respon HTTP 401 Unauthorized
 			ctx.Redirect(http.StatusSeeOther, "/login")
 			ctx.Abort()

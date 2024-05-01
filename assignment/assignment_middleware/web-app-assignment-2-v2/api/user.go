@@ -61,7 +61,7 @@ func (u *userAPI) Login(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, model.NewErrorResponse("email or password is empty"))
 		return
 	} else if user.Email == "" || user.Password == "" {
-		c.JSON(http.StatusBadRequest, model.NewErrorResponse("email or password is empty"))
+		c.JSON(http.StatusBadRequest, model.NewErrorResponse("invalid decode json"))
 		return
 	}
 
@@ -98,5 +98,19 @@ func (u *userAPI) Login(c *gin.Context) {
 
 func (u *userAPI) GetUserTaskCategory(c *gin.Context) {
 	// TODO: answer here
+	cookie, err := c.Request.Cookie("session_token")
+	if err != nil || cookie.Value == "" {
+		c.JSON(http.StatusUnauthorized, gin.H{"message": "Unauthorized"})
+		return
+	}
 
+	userTaskCategories, err := u.userService.GetUserTaskCategory()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{
+			"error": "error internal server",
+		})
+		return
+	}
+
+	c.JSON(http.StatusOK, userTaskCategories)
 }

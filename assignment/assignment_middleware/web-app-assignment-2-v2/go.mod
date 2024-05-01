@@ -3,7 +3,7 @@ module a21hc3NpZ25tZW50
 go 1.18
 
 require (
-	github.com/lib/pq v1.10.7
+	github.com/lib/pq v1.10.9
 	github.com/onsi/ginkgo/v2 v2.1.4
 	github.com/onsi/gomega v1.19.0
 	gorm.io/driver/postgres v1.4.5
