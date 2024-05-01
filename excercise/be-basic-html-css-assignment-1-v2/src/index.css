@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500&family=Klee+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Montserrat:wght@100;400&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200&family=Poppins:ital,wght@0,300;0,400;0,700;1,300&family=Roboto:ital,wght@0,100;0,700;1,300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+    justify-content: space-between;
+    width: 100%;
+}
+
+header {
+    padding: 20px;
+    margin: auto;
+
+}
+
+nav {
+    display: flex;
+    padding: 20px 50px; 
+    background: #29354a;
+    position: fixed;
+    align-content: center;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+section {
+    display: grid;
+}
+
+.menu {
+    padding-left: 40px;
+    justify-content: space-between;
+    align-content: center;
+    list-style: none;
+}
+
+.menu li {
+    display: inline;
+    margin: 10px;
+    justify-content: center;
+    list-style: none;
+}
+
+.logo {
+    width: 20px;
+}
+
+li a {
+    text-decoration: none;
+    color: rgb(223, 95, 95);
+    font-weight: 400;
+}
+
+li a:hover {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+
+.content-home {
+    padding-top: 80px;
+    background: #29354a;
+    display: flex;
+    
+}
+
+.hero {
+    width: 350px;
+    height: 350px;
+    transform: scaleX(-1);
+    z-index: 1;
+    padding-top: 20px;
+    
+    border-radius: 100%;
+    overflow: hidden;
+	border:2px solid white;
+    margin-bottom: 30px;
+}
+
+.image-hero {
+    padding-right: 250px;
+}
+
+
+.intro {
+    display: inline;
+    text-align: left;
+    padding-top: 20px;
+    padding-left: 250px;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.title {
+    font-size: 50px;
+    color: rgb(223, 95, 95);
+    margin-bottom: 20px;
+    
+}
+
+
+
+.intro p {
+    line-height: 25px;
+    font-weight: 300;
+}
+
+.discover-more {
+    padding: 20px 30px 20px 30px;
+    margin-top: 20px;
+    background-color: rgb(223, 95, 95);
+    border-radius: 5px;
+    border-style: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.discover-more:hover {
+    background-color: rgb(247, 126, 126);
+}
+
+#about {
+    display: flex;
+    
+}
+
+.about-me {
+    display: inline;
+    text-align: left;
+    justify-content: center;
+    align-content: center;
+    padding: 20px 80px;
+}
+
+
+.about-hero {
+    width: 500px;
+    padding: 20px 50px auto;
+}
+
+#projects {
+    background: linear-gradient(45deg, #65acc8, #f476ff);
+    text-align: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+
+.list-project {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 20px 80px;
+    
+    
+}
+
+.project1 {
+    padding: 20px;
+}
+
+.image-projects {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 300px;
+}
+
+.my-experiences  {
+    text-align: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+
+.title-experiences {
+    margin-left: 200px;
+    margin-top: 20px;
+    font-size: 24px;
+}
+
+.container-experiences {
+    padding: 10px;
+    margin-left: 200px;
+    margin-right: 200px;
+    
+}
+
+.experience-item {
+    position: relative; 
+    margin-left: 10px; 
+    margin-bottom: 20px; 
+    
+}
+
+.line {
+    width: 2px; 
+    height: 100%; 
+    background-color: #86b1ff;
+    position: absolute;
+    top: -10px; 
+    left: -20px;
+    margin-top: 10px;
+}
+
+.circle {
+    width: 12px;
+    height: 12px;
+    background-color: #86b1ff;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px; 
+    left: -24px; 
+    
+    
+}
+
+.circle2 {
+    width: 12px;
+    height: 12px;
+    background-color: #86b1ff;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px; 
+    left: -35px;
+}
+
+.title-exp {
+    font-size: 20px;
+}
+
+.date {
+    margin-top: -10px;
+    margin-left: -10px;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.content-experiences {
+    background-color: #86b1ff;
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    margin-left: -5px;
+    border-radius: 5px;
+}
+
+.desc-experiences {
+    padding-left: 20px;
+    padding-top: 15px;
+    font-size: 18px;
+    line-height: 25px;
+}
