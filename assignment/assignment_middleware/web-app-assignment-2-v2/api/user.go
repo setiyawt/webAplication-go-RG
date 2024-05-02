@@ -84,8 +84,8 @@ func (u *userAPI) Login(c *gin.Context) {
 	}
 
 	http.SetCookie(c.Writer, &http.Cookie{
-		Name:     "token",
-		Path:     "/",
+		Name:     "session_token",
+		Path:     "/login",
 		Value:    tokenString,
 		HttpOnly: true,
 	})
@@ -98,10 +98,13 @@ func (u *userAPI) Login(c *gin.Context) {
 
 func (u *userAPI) GetUserTaskCategory(c *gin.Context) {
 	// TODO: answer here
-	cookie, err := c.Request.Cookie("session_token")
-	if err != nil || cookie.Value == "" {
-		c.JSON(http.StatusUnauthorized, gin.H{"message": "Unauthorized"})
+
+	_, err := c.Cookie("session_token")
+	if err != nil {
+		// Jika tidak ada cookie session_token, kirim respon HTTP 401 Unauthorized
+		c.AbortWithStatus(http.StatusUnauthorized)
 		return
+
 	}
 
 	userTaskCategories, err := u.userService.GetUserTaskCategory()

@@ -44,6 +44,14 @@ func (t *taskAPI) AddTask(c *gin.Context) {
 
 func (t *taskAPI) UpdateTask(c *gin.Context) {
 	// TODO: answer here
+	_, err := c.Cookie("session_token")
+	if err != nil {
+		// Jika tidak ada cookie session_token, kirim respon HTTP 401 Unauthorized
+		c.AbortWithStatus(http.StatusUnauthorized)
+		return
+
+	}
+
 	taskIDStr := c.Param("id")
 	taskID, err := strconv.Atoi(taskIDStr)
 	if err != nil {
@@ -69,6 +77,13 @@ func (t *taskAPI) UpdateTask(c *gin.Context) {
 
 func (t *taskAPI) DeleteTask(c *gin.Context) {
 	// TODO: answer here
+	_, err := c.Cookie("session_token")
+	if err != nil {
+		// Jika tidak ada cookie session_token, kirim respon HTTP 401 Unauthorized
+		c.AbortWithStatus(http.StatusUnauthorized)
+		return
+
+	}
 	taskIDStr := c.Param("id")
 	taskID, err := strconv.Atoi(taskIDStr)
 	if err != nil {
@@ -86,6 +101,13 @@ func (t *taskAPI) DeleteTask(c *gin.Context) {
 }
 
 func (t *taskAPI) GetTaskByID(c *gin.Context) {
+	_, err := c.Cookie("session_token")
+	if err != nil {
+		// Jika tidak ada cookie session_token, kirim respon HTTP 401 Unauthorized
+		c.AbortWithStatus(http.StatusUnauthorized)
+		return
+
+	}
 	taskIDStr := c.Param("id")
 	taskID, err := strconv.Atoi(taskIDStr)
 	if err != nil {
@@ -109,6 +131,13 @@ func (t *taskAPI) GetTaskByID(c *gin.Context) {
 
 func (t *taskAPI) GetTaskList(c *gin.Context) {
 	// TODO: answer here
+	_, err := c.Cookie("session_token")
+	if err != nil {
+		// Jika tidak ada cookie session_token, kirim respon HTTP 401 Unauthorized
+		c.AbortWithStatus(http.StatusUnauthorized)
+		return
+
+	}
 	taskList, err := t.taskService.GetList()
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, model.ErrorResponse{Error: err.Error()})
@@ -120,6 +149,13 @@ func (t *taskAPI) GetTaskList(c *gin.Context) {
 
 func (t *taskAPI) GetTaskListByCategory(c *gin.Context) {
 	// TODO: answer here
+	_, err := c.Cookie("session_token")
+	if err != nil {
+		// Jika tidak ada cookie session_token, kirim respon HTTP 401 Unauthorized
+		c.AbortWithStatus(http.StatusUnauthorized)
+		return
+
+	}
 	categoryIDStr := c.Param("id")
 	categoryID, err := strconv.Atoi(categoryIDStr)
 	if err != nil {

@@ -43,6 +43,14 @@ func (ct *categoryAPI) AddCategory(c *gin.Context) {
 
 func (ct *categoryAPI) UpdateCategory(c *gin.Context) {
 	// TODO: answer here
+	_, err := c.Cookie("session_token")
+	if err != nil {
+		// Jika tidak ada cookie session_token, kirim respon HTTP 401 Unauthorized
+		c.AbortWithStatus(http.StatusUnauthorized)
+		return
+
+	}
+
 	categoryID, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, model.ErrorResponse{Error: "invalid Category ID"})
@@ -65,6 +73,14 @@ func (ct *categoryAPI) UpdateCategory(c *gin.Context) {
 
 func (ct *categoryAPI) DeleteCategory(c *gin.Context) {
 	// TODO: answer here
+	_, err := c.Cookie("session_token")
+	if err != nil {
+		// Jika tidak ada cookie session_token, kirim respon HTTP 401 Unauthorized
+		c.AbortWithStatus(http.StatusUnauthorized)
+		return
+
+	}
+
 	categoryID, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, model.ErrorResponse{Error: "Invalid category ID"})
@@ -81,6 +97,14 @@ func (ct *categoryAPI) DeleteCategory(c *gin.Context) {
 }
 
 func (ct *categoryAPI) GetCategoryByID(c *gin.Context) {
+	_, err := c.Cookie("session_token")
+	if err != nil {
+		// Jika tidak ada cookie session_token, kirim respon HTTP 401 Unauthorized
+		c.AbortWithStatus(http.StatusUnauthorized)
+		return
+
+	}
+
 	categoryID, err := strconv.Atoi(c.Param("id"))
 	if err != nil {
 		c.JSON(http.StatusBadRequest, model.ErrorResponse{Error: "Invalid category ID"})
@@ -98,6 +122,13 @@ func (ct *categoryAPI) GetCategoryByID(c *gin.Context) {
 
 func (ct *categoryAPI) GetCategoryList(c *gin.Context) {
 	// TODO: answer here
+	_, err := c.Cookie("session_token")
+	if err != nil {
+		// Jika tidak ada cookie session_token, kirim respon HTTP 401 Unauthorized
+		c.AbortWithStatus(http.StatusUnauthorized)
+		return
+
+	}
 	categoryList, err := ct.categoryService.GetList()
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, model.ErrorResponse{Error: err.Error()})
