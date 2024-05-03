@@ -1,0 +1,73 @@
+package repository
+
+import (
+	"a21hc3NpZ25tZW50/db/filebased"
+	"a21hc3NpZ25tZW50/model"
+	"log"
+)
+
+type TaskRepository interface {
+	Store(task *model.Task) error
+	Update(taskID int, task *model.Task) error
+	Delete(id int) error
+	GetByID(id int) (*model.Task, error)
+	GetList() ([]model.Task, error)
+	GetTaskCategory(id int) ([]model.TaskCategory, error)
+}
+
+type taskRepository struct {
+	filebased *filebased.Data
+}
+
+func NewTaskRepo(filebasedDb *filebased.Data) *taskRepository {
+	return &taskRepository{
+		filebased: filebasedDb,
+	}
+}
+
+func (t *taskRepository) Store(task *model.Task) error {
+	t.filebased.StoreTask(*task)
+
+	return nil
+}
+
+func (t *taskRepository) Update(taskID int, task *model.Task) error {
+	err := t.filebased.UpdateTask(task.ID, *task)
+	if err != nil {
+		return err
+	}
+	return nil // TODO: replace this
+}
+
+func (t *taskRepository) Delete(id int) error {
+	err := t.filebased.DeleteTask(id)
+	if err != nil {
+		log.Println("Error deleting task:", err)
+		return err
+	}
+	return nil
+}
+
+func (t *taskRepository) GetByID(id int) (*model.Task, error) {
+	tasks, err := t.filebased.GetTaskByID(id)
+	if err != nil {
+		return nil, err
+	}
+	return tasks, err // TODO: replace this
+}
+
+func (t *taskRepository) GetList() ([]model.Task, error) {
+	tasks, err := t.filebased.GetTasks()
+	if err != nil {
+		return nil, err
+	}
+	return tasks, nil // TODO: replace this
+}
+
+func (t *taskRepository) GetTaskCategory(id int) ([]model.TaskCategory, error) {
+	taskCategory, err := t.filebased.GetTaskListByCategory(id)
+	if err != nil {
+		return nil, err
+	}
+	return taskCategory, nil // TODO: replace this
+}
