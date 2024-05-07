@@ -1,267 +1,300 @@
-@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500&family=Klee+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Montserrat:wght@100;400&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200&family=Poppins:ital,wght@0,300;0,400;0,700;1,300&family=Roboto:ital,wght@0,100;0,700;1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500&family=Klee+One&family=Lato:ital,wght@0,300;0,400;0,700;1,300&family=Montserrat:wght@100;400&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200&family=Poppins:ital,wght@0,300;0,400;0,700;1,300&family=Roboto:ital,wght@0,100;0,700;1,300&display=swap");
 
 * {
-    padding: 0;
-    margin: 0;
-    top: 0;
-    left: 0;
-    right: 0;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 body {
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
-    overflow-x: hidden;
-    justify-content: space-between;
-    width: 100%;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  overflow-x: hidden;
+  justify-content: space-between;
+  width: 100%;
 }
 
 header {
-    padding: 20px;
-    margin: auto;
-
+  padding: 20px;
+  margin: auto;
 }
 
 nav {
-    display: flex;
-    padding: 20px 50px; 
-    background: #29354a;
-    position: fixed;
-    align-content: center;
-    justify-content: space-between;
-    z-index: 2;
+  display: flex;
+  padding: 20px 50px;
+  background: #29354a;
+  position: fixed;
+  align-content: center;
+  justify-content: space-between;
+  z-index: 2;
 }
 
-section {
-    display: grid;
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  justify-content: space-around;
+  grid-template-rows: auto;
+  gap: 0px;
+  flex-direction: column;
+}
+
+.item1 {
+  background-color: #29354a;
+  padding-left: 280px;
+  padding-top: 80px;
+  text-align: left;
+}
+
+.item2 {
+  background-color: #29354a;
+  padding-right: 280px;
+  padding-top: 80px;
+  padding-left: 70px;
+}
+
+.item3 {
+  padding-left: 280px;
+  padding-top: 40px;
+  text-align: left;
+}
+
+.item4 {
+  padding-right: 280px;
+  padding-top: 100px;
+  padding-left: 70px;
 }
 
 .menu {
-    padding-left: 40px;
-    justify-content: space-between;
-    align-content: center;
-    list-style: none;
+  justify-content: space-between;
+  align-content: center;
+  list-style: none;
 }
 
 .menu li {
-    display: inline;
-    margin: 10px;
-    justify-content: center;
-    list-style: none;
+  display: inline;
+  margin: 10px;
+  justify-content: center;
+  list-style: none;
 }
 
 .logo {
-    width: 20px;
+  width: 20px;
 }
 
 li a {
-    text-decoration: none;
-    color: rgb(223, 95, 95);
-    font-weight: 400;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
 }
 
 li a:hover {
-    color: #fff;
-    text-decoration: underline;
-    font-weight: 500;
-}
-
-
-.content-home {
-    padding-top: 80px;
-    background: #29354a;
-    display: flex;
-    
+  text-decoration: underline;
+  font-weight: 500;
 }
 
 .hero {
-    width: 350px;
-    height: 350px;
-    transform: scaleX(-1);
-    z-index: 1;
-    padding-top: 20px;
-    
-    border-radius: 100%;
-    overflow: hidden;
-	border:2px solid white;
-    margin-bottom: 30px;
+  width: 350px;
+  height: 350px;
+  transform: scaleX(-1);
+  z-index: 1;
+  border-radius: 100%;
+  overflow: hidden;
+  border: 2px solid white;
+  margin-bottom: 50px;
 }
-
-.image-hero {
-    padding-right: 250px;
-}
-
 
 .intro {
-    display: inline;
-    text-align: left;
-    padding-top: 20px;
-    padding-left: 250px;
-    justify-content: center;
-    align-content: center;
-    
+  display: inline;
+  padding-left: 300px;
+}
+
+.intro-text {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.loc {
+  display: flex;
+}
+
+.location {
+  width: 20px;
+  height: 20px;
+}
+
+.location-text {
+  margin-left: 5px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.linkedin {
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.arrow {
+  width: 15px;
+  height: 15px;
+  transform: rotate(-30deg);
 }
 
 .title {
-    font-size: 50px;
-    color: rgb(223, 95, 95);
-    margin-bottom: 20px;
-    
+  font-size: 50px;
+  color: #fff;
+  margin-bottom: 10px;
 }
-
-
 
 .intro p {
-    line-height: 25px;
-    font-weight: 300;
+  line-height: 25px;
+  font-weight: 300;
 }
 
-.discover-more {
-    padding: 20px 30px 20px 30px;
-    margin-top: 20px;
-    background-color: rgb(223, 95, 95);
-    border-radius: 5px;
-    border-style: none;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    margin-bottom: 30px;
+.about-title {
+  padding-bottom: 20px;
 }
 
-.discover-more:hover {
-    background-color: rgb(247, 126, 126);
+.experience {
+  width: 380px;
+  height: 300px;
+  margin-bottom: 50px;
 }
-
-#about {
-    display: flex;
-    
-}
-
-.about-me {
-    display: inline;
-    text-align: left;
-    justify-content: center;
-    align-content: center;
-    padding: 20px 80px;
-}
-
-
-.about-hero {
-    width: 500px;
-    padding: 20px 50px auto;
-}
-
-#projects {
-    background: linear-gradient(45deg, #65acc8, #f476ff);
-    text-align: center;
-    justify-content: center;
-    padding-top: 20px;
-}
-
-
-.list-project {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    padding: 20px 80px;
-    
-    
-}
-
-.project1 {
-    padding: 20px;
-}
-
-.image-projects {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 300px;
-}
-
-.my-experiences  {
-    text-align: center;
-    justify-content: center;
-    padding-top: 20px;
-}
-
 
 .title-experiences {
-    margin-left: 200px;
-    margin-top: 20px;
-    font-size: 24px;
-}
-
-.container-experiences {
-    padding: 10px;
-    margin-left: 200px;
-    margin-right: 200px;
-    
-}
-
-.experience-item {
-    position: relative; 
-    margin-left: 10px; 
-    margin-bottom: 20px; 
-    
-}
-
-.line {
-    width: 2px; 
-    height: 100%; 
-    background-color: #86b1ff;
-    position: absolute;
-    top: -10px; 
-    left: -20px;
-    margin-top: 10px;
-}
-
-.circle {
-    width: 12px;
-    height: 12px;
-    background-color: #86b1ff;
-    border-radius: 50%;
-    position: absolute;
-    top: 10px; 
-    left: -24px; 
-    
-    
-}
-
-.circle2 {
-    width: 12px;
-    height: 12px;
-    background-color: #86b1ff;
-    border-radius: 50%;
-    position: absolute;
-    top: 20px; 
-    left: -35px;
-}
-
-.title-exp {
-    font-size: 20px;
+  font-size: 18px;
 }
 
 .date {
-    margin-top: -10px;
-    margin-left: -10px;
-    font-size: 18px;
-    padding: 5px;
+  margin-left: 10px;
+  font-size: 14px;
+  padding: 5px;
+  font-weight: 400;
 }
 
-.content-experiences {
-    background-color: #86b1ff;
-    width: 100%;
-    height: 200px;
-    padding: 10px;
-    margin-left: -5px;
-    border-radius: 5px;
+.title-exp {
+  font-size: 16px;
+  margin-left: 12px;
 }
 
 .desc-experiences {
-    padding-left: 20px;
-    padding-top: 15px;
-    font-size: 18px;
-    line-height: 25px;
+  padding-left: 20px;
+  padding-top: 15px;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.experience-item {
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.line {
+  width: 2px;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.circle {
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: -15px;
+}
+
+.circle2 {
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  left: -25px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1079px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu,
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+  }
+
+  .hero {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 0px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: auto;
+    gap: 0px;
+    grid-template-areas:
+      "item2"
+      "item1";
+  }
+  .item2 {
+    grid-area: item2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 100px 20px 100px;
+  }
+  .item1 {
+    grid-area: item1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 100px 20px 100px;
+  }
+  .intro {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .item3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 200px 0px 200px;
+  }
+  .item4 {
+    display: inline;
+    padding: 20px 100px 0px 100px;
+  }
+
+  .about-title {
+    margin-top: 20px;
+  }
+
+  .experience {
+    width: 280px;
+    height: 200px;
+    margin-bottom: 30px;
+  }
+
+  .about-me {
+  }
 }
